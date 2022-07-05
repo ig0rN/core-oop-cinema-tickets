@@ -1,15 +1,27 @@
 <?php
+
+use Cinema\Service\BillResponse;
+use Cinema\Service\OrderFactory;
+use Cinema\Service\OrderFactoryDependency\PriceEngine;
+use Cinema\Service\OrderFactoryDependency\ProductCreator;
+
 require 'vendor/autoload.php';
 $data = require('data/data.php');
 
-$engine = new \Cinema\CinemaPriceEngine($data);
-
 //ORDER:
-$order1 = [
+$requestData = [
     'items' => [
         'cinema ticket',
         'cinema ticket',
         'cola',
     ],
 ];
-echo $engine->getOrderBill($order1);
+
+$orderFactory = new OrderFactory(
+    new ProductCreator($data),
+    new PriceEngine()
+);
+
+$order = $orderFactory->make($requestData);
+
+echo (new BillResponse($order))->getOrderBill();
