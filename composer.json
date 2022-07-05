@@ -1,0 +1,9 @@
+{
+    "name": "test/cinema-tickets",
+    "autoload": {
+        "psr-4": {
+            "Cinema\\": "src/"
+        }
+    },
+    "require": {}
+}
