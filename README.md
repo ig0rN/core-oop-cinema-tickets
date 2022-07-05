@@ -28,7 +28,7 @@ Customer buys:
    - cinema ticket ($8.25)
    - cola ($3.15)
 
-Expected output:
+Expected output: [I did it in API way with JSON output]
 
 ```
 Ordered on 08.11.2021 at 09:02:13
