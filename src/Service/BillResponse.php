@@ -28,7 +28,7 @@ class BillResponse
             'products' => $this->getProducts(),
             'subtotal' => $this->order->getSubtotal(),
             'taxes' => $this->order->getTaxes(),
-            'grandTotal' => $this->order->getGrandTotal()
+            'grandTotal' => $this->order->getGrandTotal(),
         ];
     }
 
@@ -39,7 +39,7 @@ class BillResponse
                 'name' => $product->getName(),
                 'quantity' => $product->getQuantity(),
                 'category' => $product->getCategory(),
-                'price' => $product->getPrice() * $product->getQuantity()
+                'price' => $product->getPrice() * $product->getQuantity(),
             ];
         }, $this->order->getProducts());
     }

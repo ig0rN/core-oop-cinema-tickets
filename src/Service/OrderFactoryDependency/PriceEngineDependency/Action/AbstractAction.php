@@ -8,6 +8,7 @@ use Cinema\Service\OrderFactoryDependency\PriceEngineDependency\Interface\PriceA
 abstract class AbstractAction implements PriceActionInterface
 {
     abstract protected function getAmountFromFormula(Order $order): float;
+
     abstract protected function assignAmountToOrderField(Order $order, float $amount): void;
 
     final public function makeCalculation(Order $order): void

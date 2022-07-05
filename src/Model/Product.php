@@ -28,7 +28,7 @@ class Product
 
     public function incrementQuantity(): Product
     {
-        $this->quantity++;
+        ++$this->quantity;
 
         return $this;
     }
